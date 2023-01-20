@@ -1,35 +1,19 @@
-function pigLatin(letter) {
-  let vowelPigLatinizer = "way";
-  return letter + vowelPigLatinizer;
+function convertToPigLatin(sentence) {
+  let words = sentence.split(" ");
+  let pigLatinWords = words.map(function(word) {
+    let firstLetter = word[0];
+    return word.slice(1) + firstLetter + "ay";
+  });
+  return pigLatinWords.join(" ");
 }
 
-function pigLatin(letter) {
-  let vowelPigLatinizer = "way";
-  let consonantPigLatinizer = "ay";
-  let quPigLatinizer = "ay";
-  if letter = ["a", "e", "i", "o", "u"] {
-  return letter + vowelPigLatinizer;
-  } if letter = [any consonant]
-  return letter + consonantPigLatinizer;
-  if letter = ["qu"]
-  return letter + quPigLatinizer;
+function convertToPigLatin(sentence) {
+  let words = sentence.split(" ");
+  let pigLatinWords = words.map(function(word) {
+    if(/^[aeiou]/i.test(word)) return word+"way"; // start with vowels
+    if(/^qu/i.test(word)) return word.slice(2) + "quay"; // start with qu
+    let firstLetter = word[0];
+    return word.slice(1) + firstLetter + "ay";
+  });
+  return pigLatinWords.join(" ");
 }
-
-function pigLatin(word) {
- let wordArray = word.split()
- //wordArray = [w, o, r, d]
- wordArray[0] = wordArray[0] + "ay"
- //wordArray = [way, o, r, d]
- let conjugatedWord = wordArray.join("")
- return conjugatedWord
- //cojugatedWord= "wayord"
-}
-
-function pigLatin(word) {
-  let wordArray = word.split()
-  //wordArray = [w, o, r, d]
-  if wordArray[0] = (a, e, i, o, u)
-  then wordArray[0] = wordArray[0] + vowelPigLatinizer
-}
-
-
